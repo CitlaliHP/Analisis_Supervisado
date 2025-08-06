@@ -14,7 +14,7 @@ data = {
 
 df = pd.DataFrame(data)
 
-X = df[["paginas_visitadas"]]
+X = df[["paginas_visitadas", "tiempo_minutos"]]
 y = df["compro"]
 
 X_train, X_test, y_train, y_test = train_test_split(X,y)
