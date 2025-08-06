@@ -16,7 +16,7 @@ X = df_datos_clientes.values
 #print(X)
 
 # 3. Enrenar el modelo
-modelo = KMeans(n_clusters=3, random_state=1234,n_init=10)
+modelo = KMeans(n_clusters=2, random_state=1234,n_init=10)
 modelo.fit(X)
 
 # 4. Analisis del modelo
