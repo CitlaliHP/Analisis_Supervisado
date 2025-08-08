@@ -21,7 +21,7 @@ vectorizador = TfidfVectorizer(stop_words=spanish_stop_words)
 
 X = vectorizador.fit_transform(titulos_noticias)
 
-modelo = KMeans(n_clusters=6, random_state=1234, n_init=10)
+modelo = KMeans(n_clusters=8, random_state=1234, n_init=1500)
 modelo.fit(X)
 
 
