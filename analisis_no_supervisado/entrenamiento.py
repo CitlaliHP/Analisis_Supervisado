@@ -23,3 +23,29 @@ modelo.fit(X)
 df_datos_clientes['cluster'] = modelo.labels_
 analisis = df_datos_clientes.groupby('cluster').mean()
 print(analisis)
+
+# 5. Graficar los clusters
+centroides = modelo.cluster_centers_
+etiquetas = modelo.labels_
+
+cluster0 = X[etiquetas == 0]
+cluster1 = X[etiquetas == 1]
+cluster2 = X[etiquetas == 2]
+
+plt.scatter(cluster0[:,0], cluster0[:,1], c='red', label='cluster 0')
+plt.scatter(cluster1[:,0], cluster1[:,1], c='blue', label='cluster 0')
+plt.scatter(cluster2[:,0], cluster2[:,1], c='green', label='cluster 0')
+
+#colocar los centroides de cada cluster
+
+plt.scatter(centroides[:,0], centroides[:,1], c='black', marker='x', label='centroides')
+
+#colocar titulos y etiquetas
+
+plt.title('segmentacion de clientes')
+plt.xlabel('Gasto total')
+plt.ylabel('Visitas')
+plt.legend()
+plt.grid(True)
+
+plt.savefig('graficas/clusters.png')
